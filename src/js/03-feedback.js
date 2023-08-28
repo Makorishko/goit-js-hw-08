@@ -8,7 +8,7 @@ if (savedValues) {
     form.elements[0].value = values.email;
     form.elements[1].value = values.message;
 }
-console.log(throttle);
+
 
 form.addEventListener("input", throttle(function (event){
     const values = {
@@ -21,6 +21,8 @@ form.addEventListener("input", throttle(function (event){
 
 
 form.addEventListener('submit', event => {
+    event.preventDefault();
+    
     console.log({
         email: form.elements[0].value,
         message: form.elements[1].value
